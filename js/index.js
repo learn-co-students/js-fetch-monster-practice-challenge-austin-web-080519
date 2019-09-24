@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', (event) => {
     const monstersURL = `http://localhost:3000/monsters`
     const monsterCap = `http://localhost:3000/monsters/`
+    // const specificMonster = `http://localhost:3000/monsters/${monster.id}`
     const viewMonsters = document.getElementById('monster-container')
     const createMonsterSpace = document.getElementById('create-monster')
 
@@ -21,6 +22,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     function showMonster(monster) {
         const ul = document.createElement('ul')
         const li = document.createElement('li')
+        const deleteButton = document.createElement('button')
         let name = document.createTextNode(`${monster.name}`)
         let age = document.createTextNode(`${monster.age}`)
         let desc = document.createTextNode(`${monster.description}`)
@@ -29,6 +31,14 @@ document.addEventListener('DOMContentLoaded', (event) => {
         li.appendChild(name)
         li.appendChild(age)
         li.appendChild(desc)
+        li.appendChild(deleteButton)
+        
+    
+        // deleteButton.addEventListener("click", function(){
+        //     fetch(specificMonster), {
+        //         method: 'DELETE'
+        //     }
+        // }) 
     };
 
     function createMonsterForm() {
@@ -36,7 +46,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         const monsterForm = document.createElement('form');
         const nameField = document.createElement('input');
         nameField.setAttribute('type', 'text')
-        nameField.setAttribute('value', '')
+        // nameField.setAttribute('value', '')
         const ageField = document.createElement('input');
         ageField.setAttribute('type', 'text')
         const descField = document.createElement('input');
@@ -69,6 +79,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 })
             });
     
+        
 
     };
 
